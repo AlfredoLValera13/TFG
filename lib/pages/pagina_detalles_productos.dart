@@ -18,7 +18,7 @@ class PaginaDetallesProductos extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Descripción del sabor: ...', style: const TextStyle(fontSize: 16)),
+            const Text('Descripción del sabor: ...', style: TextStyle(fontSize: 16)),
             const Text('Calorías: ...', style: TextStyle(fontSize: 16)),
             const Text('Azúcares: ...', style: TextStyle(fontSize: 16)),
             const SizedBox(height: 20),

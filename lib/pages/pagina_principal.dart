@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:tfg_test/utils/app_colors.dart';
 import 'package:tfg_test/pages/pagina_marcas.dart';
 import 'package:tfg_test/pages/pagina_carrito.dart';
+import 'package:tfg_test/pages/pagina_login.dart';
+import 'package:tfg_test/pages/pagina_favoritos.dart';
 import 'package:tfg_test/marcas/5hourenergy_full.dart';
 import 'package:tfg_test/marcas/bang_full.dart';
 import 'package:tfg_test/marcas/blackhat_full.dart';
@@ -24,10 +24,11 @@ import 'package:tfg_test/marcas/suaj_full.dart';
 import 'package:tfg_test/marcas/toroloco_full.dart';
 import 'package:tfg_test/marcas/zoa_full.dart';
 import 'package:tfg_test/marcas/monster_full.dart';
-import 'package:tfg_test/pages/pagina_favoritos.dart';
-import 'package:tfg_test/pages/pagina_login.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PaginaPrincipal extends StatefulWidget {
+  const PaginaPrincipal({super.key});
+
   @override
   _PaginaPrincipalState createState() => _PaginaPrincipalState();
 }
@@ -55,9 +56,9 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('CHUTEINA', style: TextStyle(color: Colors.yellow)),
+        title: const Text('', style: TextStyle(color: Colors.yellow)),
         backgroundColor: Colors.black,
-        iconTheme: const IconThemeData(color: Colors.white), // Hace que el ícono del drawer sea blanco
+        iconTheme: const IconThemeData(color: Colors.white),
         actions: [
           IconButton(
             icon: const Icon(Icons.shopping_cart, color: Colors.white),
@@ -74,11 +75,11 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.black,
               ),
-              child: const Text(
+              child: Text(
                 'Categorías',
                 style: TextStyle(
                   color: Colors.white,
@@ -124,8 +125,32 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                 );
               },
             ),
-            const Divider(),
-            _buildLoginLogoutSection(context),
+            ListTile(
+              leading: const Icon(Icons.login),
+              title: const Text('Iniciar Sesión'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PaginaLogin()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.code),
+              title: const Text('GitHub'),
+              onTap: () async {
+                const url = 'https://github.com/AlfredoLValera13/TFG';
+                if (await canLaunch(url)) {
+                  await launch(url);
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('No se pudo abrir la URL de GitHub'),
+                    ),
+                  );
+                }
+              },
+            ),
             ListTile(
               leading: const Icon(Icons.info),
               title: const Text('Acerca De'),
@@ -177,7 +202,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.0),
                     child: Text(
-                      '¡Bienvenido a CHUTEINA! ¡Es la primera tienda únicamente pensada para la compra bebidas energéticas de todo el mundo!\n\n¡Sumergete en el mundo de la cafeína y compra todas las latas que desees!',
+                      '¡Bienvenido a CHUTEINA! ¡Es la primera tienda únicamente pensada para la compra de bebidas energéticas de todo el mundo!\n\n¡Sumergete en el mundo de la cafeína y compra todas las latas que desees!',
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.white,
@@ -220,72 +245,40 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
     );
   }
 
-  Widget _buildLoginLogoutSection(BuildContext context) {
-    return Column(
-      children: [
-        if (!isLoggedIn)
-          ListTile(
-            leading: const Icon(Icons.login),
-            title: const Text('Iniciar Sesión'),
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => PaginaLogin()));
-            },
-          ),
-        if (isLoggedIn)
-          ListTile(
-            leading: const Icon(Icons.lock),
-            title: const Text('Cerrar Sesión'),
-            onTap: () {
-              setState(() {
-                isLoggedIn = false; // Lógica para cerrar sesión
-              });
-            },
-          ),
-        ListTile(
-          leading: const Icon(Icons.code),
-          title: const Text('GitHub'),
-          onTap: () {
-            // Lógica para ir al repositorio de GitHub
-          },
-        ),
-      ],
-    );
-  }
-
   Widget getBrandPage(String brand) {
     switch (brand) {
       case 'Five Hour Energy':
-        return FiveHourFull();
+        return const FiveHourFull();
       case 'Bang':
-        return BangFull();
+        return const BangFull();
       case 'Black Hat':
-        return BlackHatFull();
+        return const BlackHatFull();
       case 'Bucked Up':
-        return BuckedUpFull();
+        return const BuckedUpFull();
       case 'Burn':
-        return BurnFull();
+        return const BurnFull();
       case 'C4':
-        return C4Full();
+        return const C4Full();
       case 'Contact':
-        return ContactFull();
+        return const ContactFull();
       case 'Dia':
-        return DiaFull();
+        return const DiaFull();
       case 'Eneryeti':
-        return EneryetiFull();
+        return const EneryetiFull();
       case 'Hell Energy':
-        return HellEnergyFull();
+        return const HellEnergyFull();
       case 'Mercadona':
-        return MercadonaFull();
+        return const MercadonaFull();
       case 'Monster':
-        return MonsterFull();
+        return const MonsterFull();
       case 'Powerking':
-        return PowerkingFull();
+        return const PowerkingFull();
       case 'PRIME':
-        return PrimeFull();
+        return const PrimeFull();
       case 'Que Te Calles':
-        return qtcFull();
+        return const qtcFull();
       case 'Red Bull':
-        return RedbullFull();
+        return const RedbullFull();
       case 'Reign':
         return ReignFull();
       case 'Rockstar':

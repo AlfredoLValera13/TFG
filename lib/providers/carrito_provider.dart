@@ -17,9 +17,9 @@ class CarritoProvider extends ChangeNotifier {
 
   double calcularTotal() {
     double total = 0.0;
-    _productos.forEach((producto) {
+    for (var producto in _productos) {
       total += producto["price"];
-    });
+    }
     return total;
   }
 

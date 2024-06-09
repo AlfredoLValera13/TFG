@@ -23,7 +23,7 @@ class PaginaFavoritos extends StatelessWidget {
             title: Text(favorito['name']),
             subtitle: Text("${favorito['price']}€"),
             trailing: TextButton(
-              child: Text(
+              child: const Text(
                 'Eliminar de Favoritos',
                 style: TextStyle(color: Colors.red),
               ),
@@ -32,18 +32,18 @@ class PaginaFavoritos extends StatelessWidget {
                   context: context,
                   builder: (BuildContext context) {
                     return AlertDialog(
-                      title: Text('Eliminar Favorito'),
-                      content: Text('¿Desea eliminar esta lata de favoritos?'),
+                      title: const Text('Eliminar Favorito'),
+                      content: const Text('¿Desea eliminar esta lata de favoritos?'),
                       actions: [
                         TextButton(
-                          child: Text('Sí'),
+                          child: const Text('Sí'),
                           onPressed: () {
                             Provider.of<FavoritosProvider>(context, listen: false).removeFavorite(favorito);
                             Navigator.of(context).pop();
                           },
                         ),
                         TextButton(
-                          child: Text('No'),
+                          child: const Text('No'),
                           onPressed: () {
                             Navigator.of(context).pop();
                           },

@@ -20,7 +20,7 @@ class DetallesMarcas extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               'Lore de $nombreMarca...',
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
           ),
           Expanded(

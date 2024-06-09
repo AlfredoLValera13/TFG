@@ -15,7 +15,7 @@ class _PaginaPagoState extends State<PaginaPago> {
   final TextEditingController _localidadController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  bool _obscureText = true;
+  final bool _obscureText = true;
 
   Future<void> _realizarPago() async {
     if (_formKey.currentState?.validate() ?? false) {
@@ -24,14 +24,14 @@ class _PaginaPagoState extends State<PaginaPago> {
         context: context,
         barrierDismissible: false,
         builder: (BuildContext context) {
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         },
       );
 
       // Simulate a delay for the payment process
-      await Future.delayed(Duration(seconds: 2));
+      await Future.delayed(const Duration(seconds: 2));
 
       // Close the loading screen
       Navigator.of(context).pop();
@@ -42,7 +42,7 @@ class _PaginaPagoState extends State<PaginaPago> {
         barrierDismissible: false,
         builder: (BuildContext context) {
           return AlertDialog(
-            content: Column(
+            content: const Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Icon(Icons.check_circle, color: Colors.green, size: 60),
@@ -56,7 +56,7 @@ class _PaginaPagoState extends State<PaginaPago> {
                   Navigator.of(context).pop();
                   Navigator.of(context).pop(); // Go back to the main screen
                 },
-                child: Text('Aceptar'),
+                child: const Text('Aceptar'),
               ),
             ],
           );
@@ -132,74 +132,74 @@ class _PaginaPagoState extends State<PaginaPago> {
                 DropdownButtonFormField(
                   items: [
                     DropdownMenuItem(
+                      value: 'VISA',
                       child: Row(
                         children: [
                           Image.asset('lib/assets/images/pagas/visa-Photoroom.png', width: 24),
-                          SizedBox(width: 10),
-                          Text('VISA'),
+                          const SizedBox(width: 10),
+                          const Text('VISA'),
                         ],
                       ),
-                      value: 'VISA',
                     ),
                     DropdownMenuItem(
+                      value: 'MasterCard',
                       child: Row(
                         children: [
                           Image.asset('lib/assets/images/pagas/Mastercard-logo-Photoroom.png', width: 24),
-                          SizedBox(width: 10),
-                          Text('MasterCard'),
+                          const SizedBox(width: 10),
+                          const Text('MasterCard'),
                         ],
                       ),
-                      value: 'MasterCard',
                     ),
                     DropdownMenuItem(
+                      value: 'Apple Pay',
                       child: Row(
                         children: [
                           Image.asset('lib/assets/images/pagas/applepayLogo.png', width: 24),
-                          SizedBox(width: 10),
-                          Text('Apple Pay'),
+                          const SizedBox(width: 10),
+                          const Text('Apple Pay'),
                         ],
                       ),
-                      value: 'Apple Pay',
                     ),
                     DropdownMenuItem(
+                      value: 'Google Pay',
                       child: Row(
                         children: [
                           Image.asset('lib/assets/images/pagas/googlepayLogo-Photoroom.png', width: 24),
-                          SizedBox(width: 10),
-                          Text('Google Pay'),
+                          const SizedBox(width: 10),
+                          const Text('Google Pay'),
                         ],
                       ),
-                      value: 'Google Pay',
                     ),
                     DropdownMenuItem(
+                      value: 'PayPal',
                       child: Row(
                         children: [
                           Image.asset('lib/assets/images/pagas/PayPalLogo-Photoroom.png', width: 24),
-                          SizedBox(width: 10),
-                          Text('PayPal'),
+                          const SizedBox(width: 10),
+                          const Text('PayPal'),
                         ],
                       ),
-                      value: 'PayPal',
                     ),
                     DropdownMenuItem(
+                      value: 'Bizum',
                       child: Row(
                         children: [
                           Image.asset('lib/assets/images/pagas/bizumLogo-Photoroom.png', width: 24),
-                          SizedBox(width: 10),
-                          Text('Bizum'),
+                          const SizedBox(width: 10),
+                          const Text('Bizum'),
                         ],
                       ),
-                      value: 'Bizum',
                     ),
                     DropdownMenuItem(
+                      value: 'UnionPay',
                       child: Row(
                         children: [
                           Image.asset('lib/assets/images/pagas/UnionPayLogo-Photoroom.png', width: 24),
-                          SizedBox(width: 10),
-                          Text('UnionPay'),
+                          const SizedBox(width: 10),
+                          const Text('UnionPay'),
                         ],
                       ),
-                      value: 'UnionPay',
                     ),
                   ],
                   onChanged: (value) {},

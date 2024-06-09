@@ -9,6 +9,8 @@ import 'package:tfg_test/pages/pagina_favoritos.dart';
 import 'package:tfg_test/providers/favoritos_provider.dart';
 
 class C4Full extends StatefulWidget {
+  const C4Full({super.key});
+
   @override
   _C4Full createState() => _C4Full();
 }

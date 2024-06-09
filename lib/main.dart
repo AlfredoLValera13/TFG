@@ -45,14 +45,14 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: {
           '/': (context) => SplashScreen(), // Define la ruta inicial como el SplashScreen
-          '/home': (context) => PaginaPrincipal(), // Agrega la ruta home para la PaginaPrincipal
+          '/home': (context) => const PaginaPrincipal(), // Agrega la ruta home para la PaginaPrincipal
           '/marcas': (context) => PaginaMarcas(),
           '/detallesMarcas': (context) => DetallesMarcas(nombreMarca: ''),
-          '/detallesProductos': (context) => PaginaDetallesProductos(nombreProducto: ''),
+          '/detallesProductos': (context) => const PaginaDetallesProductos(nombreProducto: ''),
           '/carritos': (context) => PaginaCarrito(),
           '/favoritos': (context) => PaginaFavoritos(),
           '/login': (context) => PaginaLogin(),
-          '/registro': (context) => PaginaRegistro(),
+          '/registro': (context) => const PaginaRegistro(),
         },
       ),
     );

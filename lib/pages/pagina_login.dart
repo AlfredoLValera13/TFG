@@ -66,7 +66,7 @@ class _PaginaLoginState extends State<PaginaLogin> {
             ),
             TextButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => PaginaRegistro()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const PaginaRegistro()));
               },
               child: const Text('Crear una cuenta'),
             ),

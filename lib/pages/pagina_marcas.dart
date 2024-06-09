@@ -40,16 +40,16 @@ class _PaginaMarcasState extends State<PaginaMarcas> with SingleTickerProviderSt
     );
 
     _animationMarcas = Tween<Offset>(
-      begin: Offset(1, 0),
-      end: Offset(0, 0),
+      begin: const Offset(1, 0),
+      end: const Offset(0, 0),
     ).animate(CurvedAnimation(
       parent: _controller,
       curve: Curves.easeInOut,
     ));
 
     _animationTexto = Tween<Offset>(
-      begin: Offset(-1, 0),
-      end: Offset(0, 0),
+      begin: const Offset(-1, 0),
+      end: const Offset(0, 0),
     ).animate(CurvedAnimation(
       parent: _controller,
       curve: Curves.easeInOut,
@@ -90,7 +90,7 @@ class _PaginaMarcasState extends State<PaginaMarcas> with SingleTickerProviderSt
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('lib/assets/images/fondo.gif'),
                 fit: BoxFit.cover,
@@ -102,7 +102,7 @@ class _PaginaMarcasState extends State<PaginaMarcas> with SingleTickerProviderSt
             children: [
               SlideTransition(
                 position: _animationMarcas,
-                child: Text(
+                child: const Text(
                   'TODAS LAS MARCAS',
                   style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white),
                   textAlign: TextAlign.center,
@@ -111,7 +111,7 @@ class _PaginaMarcasState extends State<PaginaMarcas> with SingleTickerProviderSt
               const SizedBox(height: 20),
               SlideTransition(
                 position: _animationTexto,
-                child: Text(
+                child: const Text(
                   '¡Disfruta de todas nuestras marcas disponibles!',
                   style: TextStyle(fontSize: 24, color: Colors.white),
                   textAlign: TextAlign.left,
@@ -120,8 +120,8 @@ class _PaginaMarcasState extends State<PaginaMarcas> with SingleTickerProviderSt
               const SizedBox(height: 20),
               GridView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
                   childAspectRatio: 1,
                   crossAxisSpacing: 10,
@@ -166,7 +166,7 @@ class _PaginaMarcasState extends State<PaginaMarcas> with SingleTickerProviderSt
                       } else if (brand == 'Eneryeti') {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => EneryetiFull()),
+                          MaterialPageRoute(builder: (context) => const EneryetiFull()),
                         );
                       } else if (brand == 'Rockstar') {
                         Navigator.push(
@@ -176,12 +176,12 @@ class _PaginaMarcasState extends State<PaginaMarcas> with SingleTickerProviderSt
                       } else if (brand == 'C4') {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => C4Full()),
+                          MaterialPageRoute(builder: (context) => const C4Full()),
                         );
                       } else if (brand == 'Contact') {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => ContactFull()),
+                          MaterialPageRoute(builder: (context) => const ContactFull()),
                         );
                       } else if (brand == 'Dia') {
                         Navigator.push(
@@ -250,7 +250,7 @@ class _PaginaMarcasState extends State<PaginaMarcas> with SingleTickerProviderSt
                         const SizedBox(height: 10),
                         Text(
                           brand,
-                          style: TextStyle(color: Colors.white),
+                          style: const TextStyle(color: Colors.white),
                           textAlign: TextAlign.center,
                         ),
                       ],
