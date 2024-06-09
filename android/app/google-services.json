@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "504167192040",
+    "project_id": "tfglopezvaleraalfredo",
+    "storage_bucket": "tfglopezvaleraalfredo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504167192040:android:bc204bc7f72ac40120405d",
+        "android_client_info": {
+          "package_name": "com.example.tfg_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAadiruGFR43OPWE3HXdXdN2ybaxk1x4Ms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
