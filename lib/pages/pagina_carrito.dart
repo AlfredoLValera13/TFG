@@ -8,7 +8,6 @@ class PaginaCarrito extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var cart = Provider.of<ModeloCarrito>(context);
-    bool isLoggedIn = false;
 
     return Scaffold(
       appBar: AppBar(
@@ -70,14 +69,10 @@ class PaginaCarrito extends StatelessWidget {
                       Text('Total: €${cart.totalPrice.toStringAsFixed(2)}', style: const TextStyle(fontSize: 20)),
                       ElevatedButton(
                         onPressed: () {
-                          if (isLoggedIn) {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => PaginaPago()),
-                            );
-                          } else {
-                            Navigator.pushNamed(context, '/login');
-                          }
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => PaginaPago()),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.accentColor,

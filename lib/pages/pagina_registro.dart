@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tfg_test/pages/pagina_pago.dart';
 
 class PaginaRegistro extends StatefulWidget {
   const PaginaRegistro({super.key});
@@ -16,13 +17,14 @@ class _PaginaRegistroState extends State<PaginaRegistro> {
   final TextEditingController _localidadController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  String? _paisSeleccionado;
   bool _obscureText = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Register'),
+        title: const Text('Registro'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -78,6 +80,27 @@ class _PaginaRegistroState extends State<PaginaRegistro> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Por favor, introduce tu localidad';
+                    }
+                    return null;
+                  },
+                ),
+                DropdownButtonFormField(
+                  value: _paisSeleccionado,
+                  items: paises.map((String pais) {
+                    return DropdownMenuItem(
+                      value: pais,
+                      child: Text(pais),
+                    );
+                  }).toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      _paisSeleccionado = value;
+                    });
+                  },
+                  decoration: const InputDecoration(labelText: 'País'),
+                  validator: (value) {
+                    if (value == null) {
+                      return 'Por favor, selecciona tu país';
                     }
                     return null;
                   },
