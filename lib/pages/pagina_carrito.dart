@@ -12,7 +12,7 @@ class PaginaCarrito extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Carrito de Compras', style: TextStyle(color: Colors.white)),
+        title: const Text('Carrito de Compras', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.black,
       ),
       body: ListView.builder(
@@ -28,7 +28,7 @@ class PaginaCarrito extends StatelessWidget {
                   subtitle: Row(
                     children: [
                       IconButton(
-                        icon: Icon(Icons.remove),
+                        icon: const Icon(Icons.remove),
                         onPressed: () {
                           item.decrementCantidad();
                           cart.updateItem(item);
@@ -36,7 +36,7 @@ class PaginaCarrito extends StatelessWidget {
                       ),
                       Text('Cantidad: ${item.cantidad}'),
                       IconButton(
-                        icon: Icon(Icons.add),
+                        icon: const Icon(Icons.add),
                         onPressed: () {
                           item.incrementCantidad();
                           cart.updateItem(item);
@@ -45,7 +45,7 @@ class PaginaCarrito extends StatelessWidget {
                     ],
                   ),
                   trailing: IconButton(
-                    icon: Icon(Icons.delete),
+                    icon: const Icon(Icons.delete),
                     onPressed: () {
                       cart.removeItem(item.id);
                     },
@@ -67,7 +67,7 @@ class PaginaCarrito extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Total: €${cart.totalPrice.toStringAsFixed(2)}', style: TextStyle(fontSize: 20)),
+                      Text('Total: €${cart.totalPrice.toStringAsFixed(2)}', style: const TextStyle(fontSize: 20)),
                       ElevatedButton(
                         onPressed: () {
                           if (isLoggedIn) {
@@ -109,21 +109,21 @@ class PaginaCarrito extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Confirmación'),
-          content: Text('¿Deseas eliminar toda la cesta?'),
+          title: const Text('Confirmación'),
+          content: const Text('¿Deseas eliminar toda la cesta?'),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('No'),
+              child: const Text('No'),
             ),
             TextButton(
               onPressed: () {
                 cart.clearCart();
                 Navigator.of(context).pop();
               },
-              child: Text('Sí'),
+              child: const Text('Sí'),
             ),
           ],
         );

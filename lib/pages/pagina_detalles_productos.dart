@@ -25,10 +25,10 @@ class PaginaDetallesProductos extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
               },
-              child: const Text('Añadir al Carrito'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.accentColor,
               ),
+              child: const Text('Añadir al Carrito'),
             ),
           ],
         ),
