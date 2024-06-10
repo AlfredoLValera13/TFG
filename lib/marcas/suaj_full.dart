@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:provider/provider.dart';
 import 'package:tfg_test/models/modelo_carrito.dart';
 import 'package:tfg_test/pages/pagina_carrito.dart';
+import 'package:tfg_test/pages/pagina_favoritos.dart';
 import 'package:tfg_test/providers/favoritos_provider.dart';
 
 class SuajFull extends StatefulWidget {
@@ -172,7 +173,10 @@ class _SuajFull extends State<SuajFull> {
           IconButton(
             icon: const Icon(Icons.favorite, color: Colors.black),
             onPressed: () {
-
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PaginaFavoritos()),
+            );
             },
           ),
           IconButton(
