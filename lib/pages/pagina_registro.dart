@@ -118,7 +118,6 @@ class _PaginaRegistroState extends State<PaginaRegistro> {
                   child: ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState?.validate() ?? false) {
-                        // Implementar la lógica de registro
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(content: Text('Registrando...')),
                         );

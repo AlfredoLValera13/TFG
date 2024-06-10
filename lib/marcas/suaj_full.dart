@@ -137,7 +137,7 @@ class _SuajFull extends State<SuajFull> {
                         onPressed: () {
                           Navigator.of(context).pop();
                           Provider.of<ModeloCarrito>(context, listen: false).addItem(ObjetosCarritos(
-                            id: product["id"].toString(), // Asegúrate de convertir el id a cadena de texto
+                            id: product["id"].toString(),
                             nombre: product["name"],
                             precio: product["price"],
                             cantidad: 1,

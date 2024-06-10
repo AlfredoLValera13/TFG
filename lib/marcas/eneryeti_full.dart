@@ -532,7 +532,7 @@ Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
       title: const Text('Eneryeti'),
-      backgroundColor: Colors.red, // Color del AppBar en rojo
+      backgroundColor: Colors.red,
       actions: [
         IconButton(
           icon: const Icon(Icons.favorite, color: Colors.yellow),

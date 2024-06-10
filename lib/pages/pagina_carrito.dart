@@ -8,8 +8,7 @@ class PaginaCarrito extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var cart = Provider.of<ModeloCarrito>(context);
-    // Placeholder: Replace with actual user login status check
-    bool isLoggedIn = false; // Suponiendo que tienes una manera de verificar si el usuario ha iniciado sesión
+    bool isLoggedIn = false;
 
     return Scaffold(
       appBar: AppBar(

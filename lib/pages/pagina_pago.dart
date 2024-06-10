@@ -19,7 +19,6 @@ class _PaginaPagoState extends State<PaginaPago> {
 
   Future<void> _realizarPago() async {
     if (_formKey.currentState?.validate() ?? false) {
-      // Simulate a loading screen
       showDialog(
         context: context,
         barrierDismissible: false,
@@ -30,13 +29,10 @@ class _PaginaPagoState extends State<PaginaPago> {
         },
       );
 
-      // Simulate a delay for the payment process
       await Future.delayed(const Duration(seconds: 2));
 
-      // Close the loading screen
       Navigator.of(context).pop();
 
-      // Show success screen
       showDialog(
         context: context,
         barrierDismissible: false,
@@ -54,7 +50,7 @@ class _PaginaPagoState extends State<PaginaPago> {
               TextButton(
                 onPressed: () {
                   Navigator.of(context).pop();
-                  Navigator.of(context).pop(); // Go back to the main screen
+                  Navigator.of(context).pop(); 
                 },
                 child: const Text('Aceptar'),
               ),

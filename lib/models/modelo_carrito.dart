@@ -40,7 +40,7 @@ class ModeloCarrito extends ChangeNotifier {
     } else {
       _items.add(item);
     }
-    notifyListeners(); // Notificar aquí para actualizar la UI
+    notifyListeners();
   }
 
   void updateItem(ObjetosCarritos item) {

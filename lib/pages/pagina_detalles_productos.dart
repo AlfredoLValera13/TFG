@@ -24,7 +24,6 @@ class PaginaDetallesProductos extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Lógica para añadir al carrito
               },
               child: const Text('Añadir al Carrito'),
               style: ElevatedButton.styleFrom(

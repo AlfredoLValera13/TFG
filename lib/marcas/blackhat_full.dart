@@ -346,7 +346,7 @@ class _BlackHatFull extends State<BlackHatFull> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Black Hat Energy'),
-        backgroundColor: Colors.black, // Color del AppBar en negro
+        backgroundColor: Colors.black,
         actions: [
           IconButton(
             icon: const Icon(Icons.favorite),

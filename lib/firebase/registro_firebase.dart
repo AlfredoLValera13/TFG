@@ -6,12 +6,11 @@ Future<void> registerWithEmailAndPassword(String email, String password, Map<Str
       email: email,
       password: password,
     );
-    // Agrega el usuario a la base de datos o maneja el userData aquí
   } on FirebaseAuthException catch (e) {
     if (e.code == 'weak-password') {
-      print('The password provided is too weak.');
+      print('La contraseña es demasiado débil.');
     } else if (e.code == 'email-already-in-use') {
-      print('The account already exists for that email.');
+      print('Ya existe una cuenta con este correo.');
     }
   } catch (e) {
     print(e);
